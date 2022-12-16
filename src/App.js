@@ -13,7 +13,7 @@ import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import "./style.scss";
 import { useContext } from "react";
-import { DarkModeContext } from "./context/authContext";
+import { DarkModeContext } from "./context/darkModeContext";
 
 function App() {
   const currentUser = true;
