@@ -94,8 +94,7 @@ const RightBar = () => {
                 alt=""
               />
               <p>
-                <span>Jane Doe</span>
-                changed their cover picture
+                <span>Jane Doe </span> changed their cover picture
               </p>
             </div>
             <span>1 min ago</span>
@@ -160,7 +159,7 @@ const RightBar = () => {
                 alt=""
               />
               <div className="online" />
-              <span>Jane Doe</span>
+              <span>Jane Doe </span>
             </div>
           </div>
           <div className="user">
