@@ -20,8 +20,6 @@ function App() {
 
   const { darkMode } = useContext(DarkModeContext);
 
-  console.log(darkMode);
-
   const Layout = () => {
     return (
       <div className={`theme-${darkMode ? "dark" : "light"}`}>
