@@ -9,6 +9,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Post = ({ post }) => {
+  const [commentOpen, setCommentOpen] = useState(false);
+
+  //TEMPORARY
+  const liked = true;
+
   return (
     <div className="post">
       <div className="container">
@@ -31,7 +36,20 @@ const Post = ({ post }) => {
           <p>{post.desc}</p>
           <img src={post.img} alt="" />
         </div>
-        <div className="info"></div>
+        <div className="info">
+          <div className="item">
+            {liked ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
+            12 Likes
+          </div>
+          <div className="item">
+            <TextsmsOutlinedIcon />
+            12 Comments
+          </div>
+          <div className="item">
+            <ShareOutlinedIcon />
+            Share
+          </div>
+        </div>
       </div>
     </div>
   );
