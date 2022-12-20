@@ -11,7 +11,7 @@
     position: sticky;
     top: 0;
     background-color: themed("bg");
-    color: themed(textColor);
+    color: themed("textColor");
     z-index: 999;
 
     .left {
@@ -24,6 +24,7 @@
         font-size: 20px;
         color: themed("logo");
       }
+
       .search {
         display: flex;
         align-items: center;
@@ -37,6 +38,14 @@
           width: 500px;
           background-color: transparent;
           color: themed("textColor");
+
+          @include mobile {
+            display: none;
+          }
+
+          @include tablet {
+            width: 200px;
+          }
         }
       }
     }
@@ -46,19 +55,29 @@
       align-items: center;
       gap: 20px;
 
+      @include mobile {
+        display: none;
+      }
+
       .user {
         display: flex;
         align-items: center;
         gap: 10px;
-        font-weight: 600;
+        font-weight: 500;
+
+        @include tablet {
+          display: none;
+        }
+
         img {
           width: 30px;
           height: 30px;
           border-radius: 50%;
           object-fit: cover;
         }
-        //   span {
-        //   }
+
+        // span {
+        // }
       }
     }
   }
