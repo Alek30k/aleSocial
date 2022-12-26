@@ -60,7 +60,9 @@ const Share = () => {
             />
           </div>
           <div className="right">
-            {/* <img className="file" alt="" src={URL.createObjectURL()} />) */}
+            {file && (
+              <img className="file" alt="" src={URL.createObjectURL(file)} />
+            )}
           </div>
         </div>
         <hr />
