@@ -2,9 +2,9 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import {
   createBrowserRouter,
-  Navigate,
-  Outlet,
   RouterProvider,
+  Outlet,
+  Navigate,
 } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import LeftBar from "./components/leftBar/LeftBar";
@@ -31,7 +31,7 @@ function App() {
           <Navbar />
           <div style={{ display: "flex" }}>
             <LeftBar />
-            <div style={{ flex: "6" }}>
+            <div style={{ flex: 6 }}>
               <Outlet />
             </div>
             <RightBar />
@@ -45,6 +45,7 @@ function App() {
     if (!currentUser) {
       return <Navigate to="/login" />;
     }
+
     return children;
   };
 
@@ -67,7 +68,6 @@ function App() {
         },
       ],
     },
-
     {
       path: "/login",
       element: <Login />,
