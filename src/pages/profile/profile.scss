@@ -70,6 +70,7 @@
 
           a {
             color: themed("textColorSoft");
+            cursor: pointer;
           }
         }
 
@@ -96,6 +97,7 @@
               align-items: center;
               gap: 5px;
               color: themed("textColorSoft");
+              cursor: pointer;
 
               span {
                 font-size: 12px;
@@ -118,6 +120,10 @@
           align-items: center;
           justify-content: flex-end;
           gap: 10px;
+
+          .more {
+            cursor: pointer;
+          }
         }
       }
     }
