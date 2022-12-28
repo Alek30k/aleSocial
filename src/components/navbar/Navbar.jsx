@@ -16,6 +16,8 @@ const Navbar = () => {
   const { toggle, darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
 
+  console.log(currentUser);
+
   return (
     <div className="navbar">
       <div className="left">

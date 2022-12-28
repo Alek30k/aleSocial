@@ -65,6 +65,7 @@ const Post = ({ post }) => {
         <div className="user">
           <div className="userInfo">
             <img src={"/upload/" + post.profilePic} alt="" />
+            {/* <img src={post.profilePic} alt="" /> */}
             <div className="details">
               <Link
                 to={`/profile/${post.userId}`}
@@ -75,7 +76,9 @@ const Post = ({ post }) => {
               <span className="date">{moment(post.createdAt).fromNow()}</span>
             </div>
           </div>
-          <MoreHorizIcon onClick={() => setMenuOpen(!menuOpen)} />
+          <div className="more">
+            <MoreHorizIcon onClick={() => setMenuOpen(!menuOpen)} />
+          </div>
           {menuOpen && post.userId === currentUser.id && (
             <button onClick={handleDelete}>delete</button>
           )}
