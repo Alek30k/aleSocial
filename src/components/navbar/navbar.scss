@@ -80,6 +80,27 @@
         // span {
         // }
       }
+      .menuAvatar {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 90px;
+        border-radius: 5px;
+        border: 1px solid themed("border");
+        background-color: themed("bgSoft");
+        padding: 20px;
+        cursor: pointer;
+
+        display: flex;
+        gap: 5px;
+
+        button {
+          border: none;
+          background-color: transparent;
+          color: themed("textColor");
+          cursor: pointer;
+        }
+      }
     }
   }
 }
