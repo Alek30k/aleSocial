@@ -56,7 +56,12 @@ const Navbar = () => {
         <EmailOutlinedIcon />
         <NotificationsOutlinedIcon />
         <div className="user" onClick={() => setAvatarOpen(!avatarOpen)}>
-          <img src={currentUser.profilePic} alt="" />
+          <img
+            src={
+              currentUser.profilePic || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"
+            }
+            alt=""
+          />
           <span>{currentUser.name}</span>
         </div>
         {avatarOpen && (

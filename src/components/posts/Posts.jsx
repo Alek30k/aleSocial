@@ -9,6 +9,7 @@ const Posts = ({ userId }) => {
       return res.data;
     })
   );
+  console.log(data);
 
   return (
     <div className="posts">
