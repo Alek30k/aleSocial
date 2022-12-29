@@ -10,16 +10,24 @@ const Comments = ({ postId }) => {
   const { currentUser } = useContext(AuthContext);
 
   const { isLoading, error, data } = useQuery(["comments"], () =>
-    makeRequest.get("/comments?postId=" + postId).then((res) => {
-      return res.data;
-    })
+    makeRequest
+      .get(
+        "https://s-alesocial-production.up.railway.app/api/comments?postId=" +
+          postId
+      )
+      .then((res) => {
+        return res.data;
+      })
   );
 
   const queryClient = useQueryClient();
 
   const mutation = useMutation(
     (newComment) => {
-      return makeRequest.post("/comments", newComment);
+      return makeRequest.post(
+        "https://s-alesocial-production.up.railway.app/api/comments",
+        newComment
+      );
     },
     {
       onSuccess: () => {

@@ -20,7 +20,10 @@ const Update = ({ setOpenUpdate, user }) => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await makeRequest.post("/upload", formData);
+      const res = await makeRequest.post(
+        "https://s-alesocial-production.up.railway.app/api/upload",
+        formData
+      );
       return res.data;
     } catch (err) {
       console.log(err);
@@ -35,7 +38,10 @@ const Update = ({ setOpenUpdate, user }) => {
 
   const mutation = useMutation(
     (user) => {
-      return makeRequest.put("/users", user);
+      return makeRequest.put(
+        "https://s-alesocial-production.up.railway.app/api/users",
+        user
+      );
     },
     {
       onSuccess: () => {

@@ -10,7 +10,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const login = async (inputs) => {
     const res = await axios.post(
-      "http://localhost:8800/api/auth/login",
+      "https://s-alesocial-production.up.railway.app/api/auth/login",
       inputs,
       {
         withCredentials: true,
@@ -20,7 +20,9 @@ export const AuthContextProvider = ({ children }) => {
     setCurrentUser(res.data);
   };
   const logout = async () => {
-    const res = await axios.post("http://localhost:8800/api/auth/logout");
+    const res = await axios.post(
+      "https://s-alesocial-production.up.railway.app/api/auth/logout"
+    );
 
     setCurrentUser(res.data);
   };

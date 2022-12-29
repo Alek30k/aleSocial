@@ -24,17 +24,26 @@ const Profile = () => {
   const userId = parseInt(useLocation().pathname.split("/")[2]);
 
   const { isLoading, error, data } = useQuery(["user"], () =>
-    makeRequest.get("/users/find/" + userId).then((res) => {
-      return res.data;
-    })
+    makeRequest
+      .get(
+        "https://s-alesocial-production.up.railway.app/api/users/find/" + userId
+      )
+      .then((res) => {
+        return res.data;
+      })
   );
 
   const { isLoading: rIsLoading, data: relationshipData } = useQuery(
     ["relationship"],
     () =>
-      makeRequest.get("/relationships?followedUserId=" + userId).then((res) => {
-        return res.data;
-      })
+      makeRequest
+        .get(
+          "https://s-alesocial-production.up.railway.app/api/relationships?followedUserId=" +
+            userId
+        )
+        .then((res) => {
+          return res.data;
+        })
   );
 
   const queryClient = useQueryClient();
@@ -42,8 +51,14 @@ const Profile = () => {
   const mutation = useMutation(
     (following) => {
       if (following)
-        return makeRequest.delete("/relationships?userId=" + userId);
-      return makeRequest.post("/relationships", { userId });
+        return makeRequest.delete(
+          "https://s-alesocial-production.up.railway.app/api/relationships?userId=" +
+            userId
+        );
+      return makeRequest.post(
+        "https://s-alesocial-production.up.railway.app/api/relationships",
+        { userId }
+      );
     },
     {
       onSuccess: () => {
