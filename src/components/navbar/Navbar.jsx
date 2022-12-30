@@ -19,7 +19,6 @@ const Navbar = () => {
   const [avatarOpen, setAvatarOpen] = useState(false);
 
   const navigate = useNavigate();
-  console.log(currentUser);
 
   const { logout } = useContext(AuthContext);
 

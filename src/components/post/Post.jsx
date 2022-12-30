@@ -20,14 +20,9 @@ const Post = ({ post }) => {
   const { currentUser } = useContext(AuthContext);
 
   const { isLoading, error, data } = useQuery(["likes", post.id], () =>
-    makeRequest
-      .get(
-        "https://s-alesocial-production.up.railway.app/api/likes?postId=" +
-          post.id
-      )
-      .then((res) => {
-        return res.data;
-      })
+    makeRequest.get("/likes?postId=" + post.id).then((res) => {
+      return res.data;
+    })
   );
 
   const queryClient = useQueryClient();
@@ -35,10 +30,7 @@ const Post = ({ post }) => {
   const mutation = useMutation(
     (liked) => {
       if (liked) return makeRequest.delete("/likes?postId=" + post.id);
-      return makeRequest.post(
-        "https://s-alesocial-production.up.railway.app/api/likes",
-        { postId: post.id }
-      );
+      return makeRequest.post("/likes", { postId: post.id });
     },
     {
       onSuccess: () => {
@@ -49,9 +41,7 @@ const Post = ({ post }) => {
   );
   const deleteMutation = useMutation(
     (postId) => {
-      return makeRequest.delete(
-        "https://s-alesocial-production.up.railway.app/api/posts/" + postId
-      );
+      return makeRequest.delete("/posts/" + postId);
     },
     {
       onSuccess: () => {

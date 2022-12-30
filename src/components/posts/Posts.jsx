@@ -5,16 +5,10 @@ import { makeRequest } from "../../axios";
 
 const Posts = ({ userId }) => {
   const { isLoading, error, data } = useQuery(["posts"], () =>
-    makeRequest
-      .get(
-        "https://s-alesocial-production.up.railway.app/api/posts?userId=" +
-          userId
-      )
-      .then((res) => {
-        return res.data;
-      })
+    makeRequest.get("/posts?userId=" + userId).then((res) => {
+      return res.data;
+    })
   );
-  console.log(data);
 
   return (
     <div className="posts">

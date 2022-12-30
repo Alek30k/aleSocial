@@ -20,10 +20,7 @@ const Update = ({ setOpenUpdate, user }) => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await makeRequest.post(
-        "https://s-alesocial-production.up.railway.app/api/upload",
-        formData
-      );
+      const res = await makeRequest.post("/upload", formData);
       return res.data;
     } catch (err) {
       console.log(err);
@@ -38,10 +35,7 @@ const Update = ({ setOpenUpdate, user }) => {
 
   const mutation = useMutation(
     (user) => {
-      return makeRequest.put(
-        "https://s-alesocial-production.up.railway.app/api/users",
-        user
-      );
+      return makeRequest.put("/users", user);
     },
     {
       onSuccess: () => {
@@ -57,7 +51,7 @@ const Update = ({ setOpenUpdate, user }) => {
     let profileUrl;
 
     coverUrl = cover ? await upload(cover) : user.coverPic;
-    profileUrl = profile ? await upload(cover) : user.profilePic;
+    profileUrl = profile ? await upload(profile) : user.profilePic;
 
     mutation.mutate({ ...texts, coverPic: coverUrl, profilePic: profileUrl });
     setOpenUpdate(false);
