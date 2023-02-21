@@ -32,7 +32,12 @@ const Stories = () => {
   return (
     <div className="stories">
       <div className="story">
-        <img src={currentUser.profilePic} alt="" />
+        <img
+          src={
+            currentUser.profilePic || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"
+          }
+          alt=""
+        />
         <span>{currentUser.name}</span>
         <button>+</button>
       </div>

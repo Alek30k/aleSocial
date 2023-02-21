@@ -54,7 +54,7 @@ const Share = () => {
           <div className="left">
             <img
               src={
-                "/upload/" + currentUser.profilePic ||
+                currentUser?.profilePic ||
                 "https://i.ibb.co/MBtjqXQ/no-avatar.gif"
               }
               alt=""

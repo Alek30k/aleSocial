@@ -65,10 +65,7 @@ const Post = ({ post }) => {
         <div className="user">
           <div className="userInfo">
             <img
-              src={
-                "/upload/" + post.profilePic ||
-                "https://i.ibb.co/MBtjqXQ/no-avatar.gif"
-              }
+              src={post.profilePic || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"}
               alt=""
             />
             {/* <img src={post.profilePic} alt="" /> */}
